@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MadProject</string>
+    <string name="add_job_tips">Add Job Tips</string>
+    <string name="add_new_jobs">Add New Job</string>
+    <string name="admin_pannel">Admin Pannel</string>
+    <string name="job_list">Job List</string>
+    <string name="job_tips_details">Job Tips Details</string>
+    <string name="job_tips">Job Tips</string>
+    <string name="find_a_job">Find a Job</string>
+    <string name="jobs">Jobs</string>
+    <string name="update_job_details">Update Job Details</string>
+    <string name="update_job_tips">Update Job Tips</string>
+</resources>
