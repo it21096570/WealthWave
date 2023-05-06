@@ -10,4 +10,5 @@
     <string name="jobs">Jobs</string>
     <string name="update_job_details">Update Job Details</string>
     <string name="update_job_tips">Update Job Tips</string>
+    <string name="job_tips_list">Job Tips List</string>
 </resources>

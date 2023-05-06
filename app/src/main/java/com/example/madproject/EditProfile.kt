@@ -8,15 +8,15 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_jobs_admin_items.*
+import com.example.madproject.Database.DbHelperJobs
+import com.example.madproject.Model.UserModal
+import kotlinx.android.synthetic.main.activity_edit_profile.*
 
-class JobsAdminItems : AppCompatActivity() {
-
+class EditProfile : AppCompatActivity() {
 
     private lateinit var context: Context
     private val profilepic: ImageView? = null
     private val sessionManage: Sessionmanage? = null
-
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu items for use in the action bar
@@ -53,17 +53,45 @@ class JobsAdminItems : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_jobs_admin_items)
+        setContentView(R.layout.activity_edit_profile)
         context = this
 
-        jobs_page.setOnClickListener{
+        val value = intent.getStringExtra("id")
 
-            startActivity(Intent(this,JobsAdminRead::class.java))
+        val id= value!!.toInt();
 
+        val db= DbHelperJobs(this);
 
-        }
-        job_tips_page.setOnClickListener{
-            startActivity(Intent(this,JobTipsAdminRead::class.java))
+        var user=db.getOneUser(id)
+
+        fNameEdit.setText(user.fName).toString()
+        emailEdit.setText(user.email).toString()
+        phoneNumberEdit.setText(user.phoneNo).toString()
+        userNameEdit.setText(user.userName).toString()
+        passwordEdit.setText(user.password).toString()
+
+        profileUpdateBtn.setOnClickListener{
+
+            val db=DbHelperJobs(this)
+
+            var userFname=fNameEdit.text.toString()
+            var userEmail=emailEdit.text.toString()
+            var userPhoneNo=phoneNumberEdit.text.toString()
+            var userUName=userNameEdit.text.toString()
+            var userPassword=passwordEdit.text.toString()
+
+            var user= UserModal(id,userFname,userEmail,userPhoneNo,userUName,userPassword)
+
+            var success=db.updateUser(user)
+
+            if(success==true){
+                Toast.makeText(this,"USER Updated Success", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this,HomePage::class.java))
+            }
+            else{
+                Toast.makeText(this,"USER Updated Unuccess", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this,Sign_Up::class.java))
+            }
         }
     }
 }

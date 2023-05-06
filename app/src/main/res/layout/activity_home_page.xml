@@ -73,21 +73,23 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/finance_education"
-        android:layout_width="202dp"
-        android:layout_height="301dp"
+        android:layout_width="200dp"
+        android:layout_height="304dp"
+        android:background="@drawable/home_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/home_border"
         app:layout_constraintTop_toBottomOf="@+id/Finance_manage">
 
         <ImageView
             android:id="@+id/imageView14"
-            android:layout_width="201dp"
-            android:layout_height="219dp"
+            android:layout_width="179dp"
+            android:layout_height="217dp"
+            android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.521"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/finance_education_img" />
+            app:srcCompat="@drawable/finance_education_back" />
 
         <TextView
             android:id="@+id/textView33"

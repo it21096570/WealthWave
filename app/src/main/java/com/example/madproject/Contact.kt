@@ -8,9 +8,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_jobs_admin_items.*
 
-class JobsAdminItems : AppCompatActivity() {
+class Contact : AppCompatActivity() {
 
 
     private lateinit var context: Context
@@ -53,17 +52,7 @@ class JobsAdminItems : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_jobs_admin_items)
+        setContentView(R.layout.activity_contact)
         context = this
-
-        jobs_page.setOnClickListener{
-
-            startActivity(Intent(this,JobsAdminRead::class.java))
-
-
-        }
-        job_tips_page.setOnClickListener{
-            startActivity(Intent(this,JobTipsAdminRead::class.java))
-        }
     }
 }

@@ -8,10 +8,21 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_jobs_admin_items.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.madproject.Adapter.JobTipsAdapterAdmin
+import com.example.madproject.Adapter.JobTipsAdapterUser
+import com.example.madproject.Database.DbHelperJobs
+import com.example.madproject.Model.JobTipsModal
 
-class JobsAdminItems : AppCompatActivity() {
+class JobTipsUser : AppCompatActivity() {
 
+    lateinit var recyclerView: RecyclerView
+    var Adapter: JobTipsAdapterUser?= null
+    var DbHelp: DbHelperJobs?=null
+
+    var tipslist:List<JobTipsModal> = ArrayList<JobTipsModal>()
+    var linierlayoutManager: LinearLayoutManager?= null
 
     private lateinit var context: Context
     private val profilepic: ImageView? = null
@@ -24,7 +35,6 @@ class JobsAdminItems : AppCompatActivity() {
         inflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle item selection
         return when (item.itemId) {
@@ -50,20 +60,27 @@ class JobsAdminItems : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_jobs_admin_items)
+        setContentView(R.layout.activity_job_tips_user)
         context = this
 
-        jobs_page.setOnClickListener{
+        recyclerView=findViewById(R.id.jobTipsRecyclerView)
+        DbHelp= DbHelperJobs(this)
+        val db= DbHelperJobs(this)
 
-            startActivity(Intent(this,JobsAdminRead::class.java))
 
+        fetchlist()
 
-        }
-        job_tips_page.setOnClickListener{
-            startActivity(Intent(this,JobTipsAdminRead::class.java))
-        }
+    }
+    private fun fetchlist(){
+
+        tipslist=DbHelp!!.getAllJobTips()
+        Adapter= JobTipsAdapterUser(tipslist,applicationContext);
+        linierlayoutManager= LinearLayoutManager(applicationContext);
+        recyclerView.layoutManager = LinearLayoutManager(this);
+        recyclerView.adapter=Adapter
+        Adapter!!.notifyDataSetChanged()
+
     }
 }

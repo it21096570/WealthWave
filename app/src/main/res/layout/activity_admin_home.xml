@@ -4,42 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminHome"
-    android:background="@color/cream">
+    android:background="@drawable/addnewbackground"
+    tools:context=".AdminHome">
+
 
     <ImageView
-        android:id="@+id/education_admin"
-        android:layout_width="397dp"
-        android:layout_height="241dp"
-        android:layout_marginTop="12dp"
+        android:id="@+id/imageView"
+        android:layout_width="336dp"
+        android:layout_height="254dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/financial_edu_admin_img" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wealthwave_logo" />
+
+    <ImageView
+        android:id="@+id/job"
+        android:layout_width="162dp"
+        android:layout_height="152dp"
+        android:layout_marginBottom="272dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/jobadminbackground" />
+
+    <ImageView
+        android:id="@+id/education"
+        android:layout_width="166dp"
+        android:layout_height="165dp"
+        android:layout_marginBottom="84dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.844"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/articleadmin" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView14"
+        android:layout_width="126dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="28dp"
+        android:text="Finance Jobs"
+        android:textColor="@color/black"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toEndOf="@+id/job"
+        app:layout_constraintTop_toTopOf="@+id/job" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="153dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="48dp"
+        android:text="Finance Education"
+        android:textColor="@color/black"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/education"
+        app:layout_constraintEnd_toStartOf="@+id/education"
+        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="@string/admin_pannel"
-        android:textSize="30dp"
-        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:text="Admin Pannel"
         android:textColor="@color/black"
+        android:textSize="32dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/jobs_admin"
-        android:layout_width="412dp"
-        android:layout_height="261dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/education_admin"
-        app:srcCompat="@drawable/jobs_user" />
 </androidx.constraintlayout.widget.ConstraintLayout>
