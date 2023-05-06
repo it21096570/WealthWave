@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Wealth Wave</string>
+    <string name="my_menu1">INPUT NEW INVESMENT</string>
+    <string name="my_menu2">EXISTING INVESMENT</string>
+    <string name="my_menu3">TOTAL INVESMENT</string>
+    <string name="page1">Enter New Invesment</string>
+    <string name="fin_det">Financial_Details</string>
+    <string name="page2">View Invesments</string>
+    <string name="page3">Total Invesment</string>
+    <string name="tot_in">Total Income</string>
+    <string name="sum">Summary</string>
+    <string name="page4">GOAL</string>
+
+</resources>
